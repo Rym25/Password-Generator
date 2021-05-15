@@ -1,6 +1,43 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// How to Generate the Password
+// -Establish Password Criteria
+//    -Ask for password length (must be between 8-128 character)
+//    -Ask for what characters to include
+//      -Upper case letters
+//      -Lower case letters
+//      -Numbers
+//      -Special Characters
+// 
+// -Create the Password
+//    -Take in given criteria
+//    -establish length based on criteria
+//    -randomly generate password
+//      -for each password character: 
+//        -randomly select character type
+//        -randomly select character from type list
+//        -assign character to password array
+//    -Verify password meets given criteria  
+// 
+var lengthPrompt
+
+
+var passwordCriteria = function () {
+// Determines the length of the password, and sets character range
+  var length = prompt("How long should the password be? Enter a length between 8 and 128 characters.");
+  length = parseInt(length);
+  if (length <= 7 || length >= 129) {
+    alert("Please enter a number between 8 and 128.");
+    passwordCriteria();
+  }
+
+}
+
+var generatePassword = function () {
+
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
