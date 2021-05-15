@@ -24,14 +24,21 @@ var lengthPrompt
 
 
 var passwordCriteria = function () {
-// Determines the length of the password, and sets character range
+// Determine the length of the password, and sets character range
   var length = prompt("How long should the password be? Enter a length between 8 and 128 characters.");
   length = parseInt(length);
   if (length <= 7 || length >= 129) {
     alert("Please enter a number between 8 and 128.");
     passwordCriteria();
   }
-
+// Determine what types of characters will be used
+  var lower = confirm("Should the password contain lower case letters?");
+  var upper = confirm("Should the password contain UPPER case letters?");
+  var number = confirm("Should the password contain numbers?");
+  var special = confirm("Should the password contain special characters? (@,!,#,etc.)");
+// Return the criteria as an array
+  var arr = [lower,upper,number,special,length];
+  return arr;
 }
 
 var generatePassword = function () {
