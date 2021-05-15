@@ -37,7 +37,7 @@ var passwordCriteria = function () {
   var number = confirm("Should the password contain numbers?");
   var special = confirm("Should the password contain special characters? (@,!,#,etc.)");
 // Return the criteria as an array
-  // var arr = [{'lower':lower},{'upper':upper},{'number':number},{'special':special},{'length':length}];
+  var arr = [{'lower':lower},{'upper':upper},{'number':number},{'special':special},{'length':length}];
   // if (!arr[0].lower && !arr[1].upper && !arr[2].number && !arr[3].special) {
   //   alert("At least one character type must be selected.");
   //   passwordCriteria();
