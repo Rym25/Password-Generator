@@ -37,12 +37,52 @@ var passwordCriteria = function () {
   var number = confirm("Should the password contain numbers?");
   var special = confirm("Should the password contain special characters? (@,!,#,etc.)");
 // Return the criteria as an array
-  var arr = [lower,upper,number,special,length];
+  var arr = [{'lower':lower},{'upper':upper},{'number':number},{'special':special},{'length':length}];
+  if (!arr.lower && !arr.upper && !arr.number && !arr.special) {
+    alert("At least one character type must be selected.");
+    passwordCriteria();
+  }
   return arr;
+}
+// returns a random character
+var randomChar = function () {
+  // create variable for each of the character options
+  var lower = 'abcdefghijklmnopqrstuvwxyz';
+  var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var number = '1234567890';
+  var symbol = '!#$%&()*+,-./:;<=>?@[\]^_`{|}~'
+  // creates a random number between 1 and 4
+  var choice = Math.floor(Math.random()*4);
+  switch(choice){
+    case 0:
+      var x = lower[Math.floor(Math.random()*(lower.length+1))];
+      var char = {'lower': x};
+      break;
+    case 1:
+      var x = upper[Math.floor(Math.random()*(upper.length+1))];
+      var char = {'upper': x};
+      break;
+    case 2:
+      var x = number[Math.floor(Math.random()*(number.length+1))];
+      var char = {'number': x};
+      break;
+    case 3:
+      var x = symbol[Math.floor(Math.random()*(symbol.length+1))];
+      var char = {'symbol': x};
+      break;
+  }
+  return char;
 }
 
 var generatePassword = function () {
-
+// Call password criteria function
+  var criteria = passwordCriteria();
+  var password = '';
+  // Creates over the length
+  for (var i = 0; i < criteria.length; i++) {
+    // Get a random lower, upper, number, or symbol then check if it is allowed based on criteria
+    var char = randomChar();
+  }
 }
 
 // Write password to the #password input
