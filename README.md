@@ -29,3 +29,10 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
+
+Deployed site at [https://rym25.github.io/Password-Generator/]
+
+![image](https://user-images.githubusercontent.com/82060073/118427176-daa5b600-b689-11eb-90e2-c57de8ade902.png)
+
+
+
